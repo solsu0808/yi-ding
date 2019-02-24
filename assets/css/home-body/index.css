@@ -1,0 +1,9 @@
+.home-body{
+  background: linear-gradient(180deg,rgba(0,0,0,.05) 2%,#F6F6F6 8%,#F6F6F6 100%);
+  padding-bottom: 20px;
+}
+
+.home-body .home-body-container{
+  width: 1190px;
+  margin: 0 auto;
+}

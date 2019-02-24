@@ -1,0 +1,30 @@
+.register-body{
+  width: 1190px;
+}
+
+.register-body .register-btn{
+  text-align: center;
+}
+
+/* 自定义 element 表单样式 */
+.register-body .el-input__inner,
+.register-body .el-textarea__inner{
+  width: 400px;
+}
+
+.register-body .el-input__inner:focus,
+.register-body .el-textarea__inner:focus,
+.register-body .el-select .el-input.is-focus .el-input__inner{
+  border-color: #31BBAC;
+}
+
+.el-select-dropdown__item.selected{
+  color: #31BBAC;
+}
+
+/* 自定义 element 文件上传框 */
+
+.register-body .el-upload--picture-card:hover,
+.register-body .el-upload:focus{
+  border-color: #31BBAC;
+}

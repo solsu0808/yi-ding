@@ -1,0 +1,89 @@
+.city-body{
+  background: linear-gradient(180deg,rgba(0,0,0,.05) 2%,#F6F6F6 8%,#F6F6F6 100%);
+  display: inline-block;
+  width: 100%;
+}
+
+.city-body .city-main{
+  width: 1190px;
+  background-color: #FFF;
+  margin: 20px auto;
+  padding: 0 20px 30px 30px;
+  box-shadow: 0 0 10px #CCC;
+}
+
+.city-body .city-main .title-tips{
+  color: #31BBAC;
+  font-size: 18px;
+  padding-top: 30px;
+}
+
+.city-body .city-main .alphabet{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 20px 0 10px 28px;
+  text-align: center;
+  background-color: #31BBAC;
+}
+
+.city-body .city-main .alphabet:hover{
+  background-color: #53DDCE;
+}
+
+.city-body .city-main .alphabet a{
+  color: #FFF;
+  font-size: 20px;
+}
+
+.city-body .city-main .city{
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.city-body .city-main .mask-layer{
+  background-color: rgba(0,0,0,0.30);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.city-body .city-main .alphabet-list{
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 1000px;
+  height: 550px;
+  background: #FFF;
+  border-top: 3px solid #31BBAC;
+  box-shadow: 0 6px 15px #FFF;
+}
+
+.city-body .city-main .alphabet-list a{
+  display: inline-block;
+  padding: 20px;
+  color: #333;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.city-body .city-main .alphabet-list a:hover{
+  color: #53DDCE;
+}
+
+/* 字母表动画 */
+.fade-enter-active {
+  transition: all .3s;
+}
+.fade-leave-active {
+  transition: all .3s;
+}
+.fade-enter, .fade-leave-active {
+  transform: translateY(-20px);
+  opacity: 0;
+}

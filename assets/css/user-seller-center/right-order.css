@@ -1,0 +1,142 @@
+.right-order{
+  margin: 30px 5%;
+}
+
+.right-order .right-order-title{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1.5%;
+}
+
+.right-order .right-order-title span:hover{
+  cursor: pointer;
+  color: #53DDCE;
+}
+
+.right-order .right-order-title .el-icon-arrow-left{
+  font-weight: 600;
+}
+
+/* 自定义 element 卡片样式 */
+.right-order .el-card.box-card.is-always-shadow{
+  margin: 0.5% 0;
+  font-size: 13px;
+  padding-left: 20px;
+}
+
+.right-order .el-card.box-card.is-always-shadow .title{
+  text-align: right;
+  display: inline-block;
+  line-height: 22px;
+  color: #999;
+}
+
+.right-order .el-card.box-card.is-always-shadow:hover{
+  color: #31BBAC;
+}
+
+/* 遮罩层 */
+.right-order .right-order-shade{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+.right-order .right-order-shade .el-icon-loading{
+  font-size: 35px;
+  position: fixed;
+  top: 48%;
+  left: 48%;
+}
+
+/* 评论界面 */
+.right-order .right-order-shade .right-order-comment{
+  background-color: #FFF;
+  box-shadow: 0 5px 20px #DDD;
+  border-top: 3px solid #31BBAC;
+  padding: 20px 10%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.right-order .right-order-shade .right-order-comment .star{
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.right-order .right-order-shade .right-order-comment .el-icon-star-on{
+  font-size: 20px;
+  color: #888;
+  margin: 0 0.8%;
+}
+
+.right-order .right-order-shade .right-order-comment .el-icon-star-on.main-color{
+  color: #31BBAC;
+}
+
+.right-order .right-order-shade .right-order-comment .el-icon-star-on:hover{
+  cursor: pointer;
+  color: #31BBAC;
+}
+
+.right-order .right-order-shade .right-order-comment .no-star{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #F00;
+  font-size: 12px;
+}
+
+/* 自定义element文本域样式 */
+.right-order .right-order-shade .right-order-comment .el-textarea__inner:focus{
+  border-color: #31BBAC;
+}
+
+/* 自定义element按钮样式 */
+.right-order .right-order-shade .right-order-comment .comment-btn{
+  text-align: center;
+}
+
+.right-order .right-order-shade .right-order-comment .el-button.el-button--default{
+  border-color: #DDD;
+  margin-top: 20px;
+  font-size: 13px;
+  padding: 12px 10%;
+}
+
+.right-order .right-order-shade .right-order-comment .el-button.el-button--default:hover{
+  border-color: #DDD;
+  color: #FFF;
+  background-color: #53DDCE;
+}
+
+.right-order .right-order-shade .right-order-comment .el-button.el-button--default:focus{
+  border-color: #DDD;
+  color: #FFF;
+  background-color: #53DDCE;
+}
+
+.right-order .right-order-shade .right-order-comment .el-button.el-button--default:active{
+  border-color: #DDD;
+  border-width: 0;
+  background-color: #20AA9B;
+}
+
+/* 遮罩层动画 */
+.fade-enter-active {
+  transition: all .3s;
+}
+.fade-leave-active {
+  transition: all .3s;
+}
+.fade-enter, .fade-leave-active {
+  transform: translateY(-20px);
+  opacity: 0;
+}

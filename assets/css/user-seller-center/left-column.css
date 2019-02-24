@@ -1,0 +1,25 @@
+.center-left-column{
+  background-color: #F0F0F0;
+  position:fixed;
+  top: 62px;
+  left: 0;
+  height: 100%;
+  width: 60px;
+}
+
+.center-left-column .left-column-headimg{
+  text-align: center;
+  color: #31BBAC;
+  padding: 40px 0;
+}
+
+.center-left-column .left-column-headimg .iconfont{
+  font-size: 26px;
+}
+
+.el-menu--collapse{
+  width: 60px;
+  border: 0;
+  position: fixed;
+  bottom: 20px;
+}

@@ -1,0 +1,47 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+dl, dd{
+  margin:0;
+}
+
+a{
+  text-decoration:none;
+  color: #333;
+}
+
+a:hover{
+  color: #31BBAC;
+}
+
+.active, .main-color{
+  color: #31BBAC;
+}
+
+/* 全局路由动画 */
+.page-enter-active, .page-leave-active {
+  transition:all 0.4s linear;
+}
+.page-leave-active, .page-enter{
+  transform: rotateY(90deg);
+  opacity: 0.3;
+}
+
+/* 没有结果时 404 航班 */
+.nothing-404{
+  text-align: center;
+  padding: 50px;
+}
+
+.nothing-404 .iconfont.icon-AK-LYhangbanyuding{
+  font-size: 130px;
+  color: #31BBAC;
+}
+
+.nothing-404 .no-info-404{
+  color: #31BBAC;
+  margin-top: 50px;
+  font-size: 18px;
+}

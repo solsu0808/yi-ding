@@ -1,0 +1,23 @@
+.category-nav{
+  position: absolute;
+  top: 142px;
+  text-align: center;
+  width: 230px;
+  height: 475px;
+  background: linear-gradient(180deg,rgba(2,181,157,.85) 2%,rgba(22,146,183,.85) 100%);
+}
+
+.category-nav dt{
+  color: #fff;
+  padding: 16px 0 32px 0;
+}
+
+.category-nav a{
+  color: #fff;
+  line-height: 28px;
+  font-size: 13px;
+}
+
+.category-nav dd:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+}

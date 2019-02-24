@@ -1,0 +1,185 @@
+.reserve-body{
+  width: 1190px;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #DDD;
+  /* 清除mrgin合并 */
+  border: 1px solid transparent;
+}
+
+/* 商家样式 */
+.reserve-body .reserve-seller{
+  padding: 10px 20px;
+  width: 70%;
+  margin: 35px auto 0;
+  box-shadow: 0 0 20px #DDD;
+}
+
+.reserve-body .reserve-seller:hover{
+  box-shadow: 5px 5px 20px #DDD;
+}
+
+.reserve-body .reserve-seller img{
+  width: 100px;
+}
+
+.reserve-body .reserve-seller .reserve-seller-pname,
+.reserve-body .reserve-seller .reserve-seller-location,
+.reserve-body .reserve-seller .reserve-seller-pay{
+  padding: 3px 0;
+}
+
+.reserve-body .reserve-seller .reserve-seller-pname{
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.reserve-body .reserve-seller .reserve-seller-location,
+.reserve-body .reserve-seller .reserve-seller-pay{
+  font-size: 12px;
+}
+
+/* 表单样式 */
+.reserve-body .reserve-form{
+  width: 30%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* 预订金 */
+.reserve-body .reserve-form .reserve-money{
+  text-align: center;
+}
+.reserve-body .reserve-form .reserve-money span{
+  color: #31BBAC;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* 自定义 element 表单样式 */
+.reserve-body .reserve-form .el-input__inner{
+  text-align: center;
+  border-width: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #CCC;
+  margin-right: 60px;
+}
+
+.reserve-body .reserve-form .el-input__inner:focus,
+.el-select .el-input.is-focus .el-input__inner{
+  border-color: #31BBAC;
+}
+
+.el-select-dropdown__item.selected,
+.el-date-table td.today span,
+.el-date-table td.available:hover,
+.el-date-picker__header-label.active,
+.el-date-picker__header-label:hover,
+.el-picker-panel__icon-btn:hover{
+  color: #31BBAC;
+}
+
+.el-select-dropdown__list{
+  width: 290px;
+}
+
+.el-date-table td.current:not(.disabled) span{
+  background-color: #31BBAC;
+}
+
+.reserve-body .reserve-form .el-button--primary{
+  width: 100%;
+  border-color: #31BBAC;
+  background-color: #31BBAC;
+}
+
+.reserve-body .reserve-form .el-button--primary:focus,
+.reserve-body .reserve-form .el-button--primary:hover{
+  border-color: #53DDCE;
+  background-color: #53DDCE;
+}
+
+.reserve-body .reserve-form .el-button--primary.is-active,
+.reserve-body .reserve-form .el-button--primary:active{
+  border: 4px solid #53DDCE;
+}
+
+/* 预订确认弹框 */
+.reserve-body .reserve-confirm-shade{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+
+.reserve-body .reserve-confirm-shade .reserve-confirm{
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: #FFF;
+  padding: 10px 30px 0;
+}
+
+.reserve-body .reserve-confirm-shade .reserve-confirm .nothing-404{
+  padding: 0;
+}
+.reserve-body .reserve-confirm-shade .reserve-confirm .nothing-404 .no-info-404{
+  margin-top: 0;
+}
+
+.reserve-body .reserve-confirm-shade .reserve-confirm .title{
+  font-size: 18px;
+  font-weight: 600;
+  color: #31BBAC;
+}
+
+.reserve-body .reserve-confirm-shade .reserve-confirm .info{
+  font-size: 14px;
+  color: #555;
+}
+
+.reserve-body .reserve-confirm-shade .reserve-confirm .info span{
+  font-weight: 600;
+  color: #31BBAC;
+}
+
+
+/* 自定义element按钮 */
+
+.reserve-body .reserve-confirm-shade .reserve-confirm .reserve-confirm-btn .el-button.el-button--default{
+  background-color: #31BBAC;
+  color: #FFF;
+}
+
+.reserve-body .reserve-confirm-shade .reserve-confirm .reserve-confirm-btn .el-button.el-button--default:hover{
+  background-color: #53DDCE;
+  color: #FFF;
+}
+
+.reserve-body .reserve-confirm-shade .reserve-confirm .reserve-confirm-btn .el-button.el-button--default:focus{
+  border: 3px solid #53DDCE;
+}
+
+/* 预订确认弹框动画 */
+.scale-enter-active {
+  animation: scale-in .5s;
+}
+.scale-leave-active {
+  animation: scale-in .5s reverse;
+}
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

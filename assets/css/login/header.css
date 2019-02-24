@@ -1,0 +1,30 @@
+.login-header{
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 2px solid #31BBAC;
+}
+
+.login-header .logo{
+  vertical-align:middle;
+  height: 38px;
+}
+
+.login-header .login-btn{
+  font-size: 12px;
+  color: #31BBAC;
+}
+
+/* 自定义 element 按钮样式 */
+.login-header .login-btn .el-button{
+  font-size: 12px;
+  background: #31BBAC;
+  color: #FFF;
+  padding: 7px 13px;
+}
+
+.login-header .login-btn .el-button:hover{
+  color: #FFF;
+  background: #53DDCE;
+  border-color: #31BBAC;
+}

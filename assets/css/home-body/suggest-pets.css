@@ -1,0 +1,103 @@
+.suggest-pets {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  background: #FFF;
+  box-shadow: 3px 3px 6px #DDD;
+}
+
+.suggest-pets .suggest-pets-title {
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  padding: 10px 0 0 20px;
+}
+
+/* 字体图标 样式*/
+.suggest-pets .suggest-pets-title .el-icon-bell {
+  font-size: 22px;
+  color: #31BBAC;
+}
+
+/* 第一个卡片 */
+.suggest-pets .suggest-pets-body .suggest-pets-body-first-list {
+  padding: 10px;
+  height: 403px;
+}
+
+.suggest-pets .suggest-pets-body .image {
+  width: 377px;
+  display: block;
+}
+
+.suggest-pets .suggest-pets-body .suggest-pets-body-first-list .image {
+  height: 403px;
+}
+
+.suggest-pets .suggest-pets-body .pets-list {
+  position: relative;
+}
+
+.suggest-pets .suggest-pets-body .pets-list-title {
+  bottom: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  color: #FFF;
+  z-index: 1;
+}
+
+/* 第一个卡片之后的卡片 */
+.suggest-pets .suggest-pets-body .suggest-pets-body-list {
+  padding: 10px;
+}
+
+.suggest-pets .suggest-pets-body .suggest-pets-body-list .image {
+  height: 190px;
+}
+
+/* 页面初始化时所有卡片动画 */
+.suggest-pets .suggest-pets-body .pets-list .image{
+    /*关键帧名称*/
+  animation-name: scaleInit;
+    /*动画播放的次数*/
+  animation-iteration-count: 1;
+    /*动画所花费的时间*/
+  animation-duration: 0.3s;
+
+}
+
+@keyframes scaleInit {
+  0% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);  }
+}
+
+/* 获取焦点动画 */
+.suggest-pets .suggest-pets-body .pets-list:hover .image{
+    /*关键帧名称*/
+  animation-name: scaleHover;
+    /* 保持结束状态 */
+  animation-fill-mode: forwards;
+  /*动画播放的次数*/
+  animation-iteration-count: 1;
+  /*动画所花费的时间*/
+  animation-duration: 0.5s;
+}
+
+@keyframes scaleHover {
+  /*定义关键帧、imgHover是需要绑定到选择器的关键帧名称*/
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}

@@ -1,0 +1,97 @@
+.product-seller-comments{
+  width: 1190px;
+  margin: 100px auto 30px;
+  box-shadow: 0 0 16px #CCC;
+  border-radius: 5px;
+  position: relative;
+}
+
+.product-seller-comments::before{
+  content: "用户评论";
+  position: relative;
+  font-size: 22px;
+  top: -45px;
+  left: 15px;
+}
+
+.product-seller-comments .comments-row{
+  padding: 0 40px;
+}
+
+.product-seller-comments .comments-body{
+  padding-bottom: 20px;
+  margin-bottom:35px;
+  border-bottom: 1px solid #DDD;
+}
+
+/* 自定义字体图标 */
+.product-seller-comments .comments-body .comments-headimg .iconfont.icon-touxiang{
+  display: inline-block;
+  padding-top: 7px;
+  font-size: 32px;
+}
+
+.product-seller-comments .comments-body .comments-user,
+.product-seller-comments .comments-body .comments-info{
+  font-size: 14px;
+}
+
+.product-seller-comments .comments-body .comments-star{
+  font-size: 12px;
+  color: #31BBAC;
+}
+
+.product-seller-comments .comments-body .comments-info{
+  line-height: 23px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.product-seller-comments .comments-body .comments-time{
+  display: inline-block;
+  font-size: 12px;
+  position:relative;
+  left: 100%;
+  transform: translateX(-100%);
+  color: #BBB;
+}
+
+.product-seller-comments .comments-body .comments-reply::before{
+  content:"商家回复";
+  position: relative;
+  top: -12px;
+  left: 20px;
+  background-color: #FFF;
+  font-size: 15px;
+  font-weight: 600;
+  color: #456;
+}
+
+.product-seller-comments .comments-body .comments-reply{
+  border: 1px solid #31BBAC;
+  border-radius: 8px;
+  margin: 15px auto;
+  box-shadow: 3px 3px 15px #CDC;
+}
+
+/* 清除子元素浮动 */
+.product-seller-comments .comments-body .comments-reply::after{
+  content:"";
+  clear: both;
+  display: block;
+}
+
+.product-seller-comments .comments-body .comments-reply .reply-context{
+  margin: 0 10px 0 20px;
+  font-size: 13.5px;
+  line-height: 23px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.product-seller-comments .comments-body .comments-reply .reply-time{
+  margin-right: 10px;
+  font-size: 12px;
+  color: #BBB;
+  float: right;
+}

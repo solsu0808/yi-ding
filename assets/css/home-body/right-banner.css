@@ -1,0 +1,17 @@
+.right-banner{
+  padding-left: 240px;
+  padding-top: 20px;
+}
+
+.right-banner .pets1,
+.right-banner .pets2,
+.right-banner .pets3,
+.right-banner .pets4{
+  display: inline-block;
+}
+
+.right-banner .pets2,
+.right-banner .pets3,
+.right-banner .pets4{
+  margin-top: 5px;
+}

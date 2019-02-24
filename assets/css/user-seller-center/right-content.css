@@ -1,0 +1,43 @@
+.center-right-content{
+  padding: 60px 0 20px 60px;
+  background: #FCFCFC;
+  min-height: 100vh;
+}
+
+.center-right-content .right-content-card{
+  padding: 8% 6%;
+}
+
+.center-right-content .right-content-card .card-title{
+  margin-bottom: 20px;
+}
+
+.center-right-content .right-content-card .right-content-col{
+  padding: 1%;
+}
+.center-right-content .right-content-card .clearfix .main-color{
+  font-weight: 600;
+}
+
+.center-right-content .right-content-card .text.item{
+  color: #666;
+  font-size: 14px;
+}
+
+/* 自定义卡片样式 */
+.center-right-content .right-content-card .el-card.box-card.is-always-shadow:hover{
+  box-shadow: 0 8px 30px #DDD;
+  transform: translateY(-6px);
+  color: #31BBAC;
+}
+
+/* 过渡 */
+.translate-enter-active {
+  transition: all 0.6s;
+}
+.translate-leave-active {
+  transition: all 0.6s;
+}
+.translate-enter, .translate-leave-to {
+  transform: rotateY(90deg) rotateX(90deg);
+}

@@ -1,0 +1,28 @@
+.head-nav{
+  background-color: #F8F8F9;
+  line-height: 40px;
+  font-size: 12px;
+}
+
+.head-nav .head-row{
+  width: 1190px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.head-nav .head-row .main-color{
+  color: #31BBAC;
+}
+
+.head-nav .head-row .chooseCity{
+  margin-right: 35px;
+}
+
+.head-nav .head-row .head-nav-dd{
+  float: right;
+  margin-left: 20px;
+}
+
+.head-nav .head-nav-dl{
+  overflow: auto;
+}

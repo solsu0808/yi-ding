@@ -1,0 +1,79 @@
+.search-product-body{
+  width: 1190px;
+  margin: 50px auto;
+  box-shadow: 0 0 5px #CCC;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+/* 头部排序 */
+.search-product-body .product-sort-dl{
+  border-bottom: 1px solid #CCC;
+  padding: 0 0 20px 30px;
+  font-size: 14px;
+}
+
+.search-product-body .product-sort{
+  display: inline-block;
+  margin-right: 30px;
+  border-bottom: 2px solid transparent;
+}
+
+.search-product-body .product-sort:hover{
+  cursor: pointer;
+  border-bottom: 2px solid #31BBAC;
+}
+
+/* 产品列表 */
+.search-product-body .product-list .product-list-body{
+  padding: 20px;
+}
+
+.search-product-body .product-list .product-list-body .is-always-shadow:hover{
+  color: #31BBAC;
+  border-color: #31BBAC;
+}
+
+.search-product-body .product-list .product-list-body .product-list-info-title,.product-list-info-body{
+  padding-left: 15px;
+}
+
+.search-product-body .product-list .product-list-body .product-list-info-title{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.search-product-body .product-list .product-list-body .product-list-info-body{
+  font-size: 12px;
+}
+
+/* 底部分页按钮 */
+.search-product-body .load-more{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.search-product-body .load-more .el-pagination li,
+.search-product-body .load-more .el-pagination button i{
+  font-size: 16px;
+}
+
+.search-product-body .load-more .el-pagination li:hover,
+.search-product-body .load-more .el-pagination button:hover i{
+  color: #31BBAC;
+}
+
+.search-product-body .load-more .el-pagination li.active{
+  color: #31BBAC;
+}
+
+
+/* 字体图标 */
+.search-product-body .product-list .product-list-body .el-icon-star-on,.el-icon-star-off{
+  color: #31BBAC;
+}
+
+.search-product-body .product-list .image{
+  width: 256px;
+  height: 180px;
+}
