@@ -3,11 +3,11 @@
     <div class="login-body">
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
         <el-form-item label="商家 ID" prop="sellerId">
-          <el-input v-model="ruleForm.sellerId"></el-input>
+          <el-input v-model="ruleForm.sellerId" @keyup.enter.native="signin('ruleForm')"></el-input>
         </el-form-item>
         </el-form-item>
         <el-form-item label="密码" prop="pass">
-          <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+          <el-input type="password" v-model="ruleForm.pass" autocomplete="off" @keyup.enter.native="signin('ruleForm')"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="signin('ruleForm')">商家登录</el-button>

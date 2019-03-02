@@ -1,11 +1,18 @@
 .right-order{
-  margin: 30px 5%;
+  margin: 0 5% 30px;
 }
 
 .right-order .right-order-title{
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 1.5%;
+  position: fixed;
+  z-index: 99;
+  background-color: #FCFCFC;
+  margin-top: 3px;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  transform: translateX(-2%);
 }
 
 .right-order .right-order-title span:hover{
@@ -15,6 +22,10 @@
 
 .right-order .right-order-title .el-icon-arrow-left{
   font-weight: 600;
+}
+
+.right-order .right-order-body{
+  padding-top: 60px;
 }
 
 /* 自定义 element 卡片样式 */
@@ -57,12 +68,20 @@
   background-color: #FFF;
   box-shadow: 0 5px 20px #DDD;
   border-top: 3px solid #31BBAC;
-  padding: 20px 10%;
+  padding: 20px 5%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
+}
+
+.right-order .right-order-shade .right-order-comment .reply-title{
+  font-weight: 600;
+  font-size: 16px;
+  color: #31BBAC;
+  margin-bottom: 20px;
+  transform: translateX(-20px);
 }
 
 .right-order .right-order-shade .right-order-comment .star{

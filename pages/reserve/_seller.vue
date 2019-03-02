@@ -14,11 +14,6 @@ export default {
     headSearch,
     reserveBody
   },
-  beforeRouteEnter(to, from, next){
-    if(typeof(window) !=='undefined'){
-      next()
-    }
-  },
   beforeRouteLeave (to, from, next) {
     if(to.fullPath === '/login'){
       this.$store.dispatch('beforeLoginAction', from.fullPath)

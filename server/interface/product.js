@@ -134,4 +134,25 @@ router.post('/get-search-sug', async (ctx, next) => {
   ctx.body = result
 })
 
+// 获取搜索框下方搜索建议
+router.post('/get-suggets', async (ctx, next) => {
+  try{
+    let result = await product.aggregate([
+      {
+        $match: {
+          city: ctx.request.fields.city
+        }
+      },
+      {
+        $limit: 5
+      }
+    ])
+    return ctx.body = result
+  } catch(err){
+    console.log(err)
+    ctx.status = 500
+    return ctx.body = '500: get-suggets err'
+  }
+})
+
 module.exports = router

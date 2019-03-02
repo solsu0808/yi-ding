@@ -8,8 +8,8 @@
 
 <script>
 import headerNav from '@/components/user-seller-center/public/header-nav'
-import leftColumn from '@/components/user-seller-center/user/left-column'
-import rightContent from '@/components/user-seller-center/user/right-content'
+import leftColumn from '@/components/user-seller-center/seller/left-column'
+import rightContent from '@/components/user-seller-center/seller/right-content'
 
 export default {
   components: {

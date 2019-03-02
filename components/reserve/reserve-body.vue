@@ -22,21 +22,21 @@
       </div>
     <div class="reserve-form">
       <el-form ref="ruleForm" :model="ruleForm" :rules="rules" label-width="80px">
-        <el-form-item label="预订人" prop="name">
+        <el-form-item label="预订者名" prop="name">
           <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
         <el-form-item label="手机号码" prop="phone">
           <el-input v-model.number="ruleForm.phone"></el-input>
         </el-form-item>
-        <el-form-item label="订几人" prop="numberPeople">
+        <el-form-item label="预订几人" prop="numberPeople">
           <el-select class="form-number-people" v-model="ruleForm.numberPeople" placeholder="请选择预订人数">
             <el-option v-for="item in 20" :label="item" :value="item" :key="item"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="订几时" prop="date">
+        <el-form-item label="预订几时" prop="date">
           <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date" style="width: 100%;"></el-date-picker>
         </el-form-item>
-        <el-form-item label="备注">
+        <el-form-item label="备注留言">
           <el-input v-model="ruleForm.remark"></el-input>
         </el-form-item>
         <el-form-item>

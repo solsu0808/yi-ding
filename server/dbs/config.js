@@ -10,14 +10,14 @@ module.exports = {
   },
   smtp: {
     get host(){
-      return 'smtp.office365.com'
+      return 'smtp.qq.com'
     },
     get messenger(){
-      return 'solyo_messenger@hotmail.com'
+      return '849643869@qq.com'
     },
     get authorityPass(){
-      // return 'jnyqysvwwxrqbbhb'
-      return 'mssolyo0808'
+      return 'jnyqysvwwxrqbbhb'
+      // return 'mssolyo0808'
     },
     get code(){
       return Math.random().toString(10).slice(2,6)

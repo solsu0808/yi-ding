@@ -28,21 +28,24 @@ router.post('/getcode', async (ctx, next) => {
 
   // 创建发送服务
   let transporter = nodemailer.createTransport({
-    service: 'Hotmail', // 使用了内置传输发送邮件 查看支持列表：https://nodemailer.com/smtp/well-known/
+    service: 'qq', // 使用了内置传输发送邮件 查看支持列表：https://nodemailer.com/smtp/well-known/
     port: 587, // SMTP 端口
-    secureConnection: true, // 使用了 SSL
+    secureConnection: false, // 不使用 SSL 端口587  使用SSL 端口465
     auth: {
       user: dbsConfig.smtp.messenger,
       // 这里不是qq密码，是你设置的smtp授权码
       pass: dbsConfig.smtp.authorityPass
-    }
+    },
+    ignoreTLS: true,
+    secure: false,
+    debug: true
   })
 
   // 生成随机验证码
   let code = dbsConfig.smtp.code
   // 验证码有效时长
   let expire = dbsConfig.smtp.expire
-  await client.setex(email + code, expire, code)
+  await client.setex(email, expire, code)
   // 定义发送参数
   let mailOptions = {
     // 发送方
@@ -68,7 +71,7 @@ router.post('/getcode', async (ctx, next) => {
 router.post('/signup', async (ctx, next) => {
   let { email, code, pass } = ctx.request.fields
   // 获取存放在 redis 中的验证码
-  let redisCode = await client.get(email + code)
+  let redisCode = await client.get(email)
   if(redisCode !== code){
     return ctx.body = '验证码不正确'
   }

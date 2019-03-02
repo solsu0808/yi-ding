@@ -9,20 +9,21 @@ let router = new Router()
 
 router.get('/getIp', async (ctx, next) => {
   try{
-    // 获取本地 IP 线上使用
-    // var ip = ctx.req.headers['x-forwarded-for'] ||
-    //   ctx.req.ip ||
-    //   ctx.req.connection.remoteAddress ||
-    //   ctx.req.socket.remoteAddress ||
-    //   ctx.req.connection.socket.remoteAddress || '';
-    // if (ip.split(',').length > 0) {
-    //   ip = ip.split(',')[0]
-    // }
-    // ctx.body = ip
-
-    // 获取外网 IP  223.125.74.12
-    let { data: ip } = await axios.get('http://ifconfig.me/ip')
-    // let ip = '223.14.200.100'
+    if(process.env.NODE_ENV === 'production'){
+      // 获取本地 IP 线上使用
+      var ip = ctx.req.headers['x-forwarded-for'] ||
+        ctx.req.ip ||
+        ctx.req.connection.remoteAddress ||
+        ctx.req.socket.remoteAddress ||
+        ctx.req.connection.socket.remoteAddress || '';
+      if (ip.split(',').length > 0) {
+        ip = ip.split(',')[0]
+      }
+    } else{
+      // 获取外网 IP  223.125.74.12
+      var { data: ip } = await axios.get('http://ifconfig.me/ip')
+      // let ip = '223.14.200.100'
+    }
 
     // 获取 ip 地址最后一个 '.' 的位置
     let index = ip.lastIndexOf('.')

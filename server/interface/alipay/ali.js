@@ -16,14 +16,18 @@ const alipaySdk = new AlipaySdk({
 })
 
 router.post('/pay', async (ctx, next) => {
+  let baseUrl = 'http://127.0.0.1:3000'
+  if(process.env.NODE_ENV === 'production'){
+    baseUrl = 'http://47.112.5.236:80'
+  }
   let req = ctx.request.fields
   const formData = new AlipayFormData();
   // 调用 setMethod 并传入 get，会返回可以跳转到支付页面的 url
   formData.setMethod('get');
 
-  formData.addField('notifyUrl', 'http://127.0.0.1:3000/pay-confirm');
+  formData.addField('notifyUrl', `${baseUrl}/pay-confirm`);
   // 支付完成跳转 returnUrl
-  formData.addField('returnUrl', 'http://127.0.0.1:3000/pay-confirm');
+  formData.addField('returnUrl', `${baseUrl}/pay-confirm`);
   formData.addField('bizContent', {
     // 最晚付款时限
     timeExpire: req.timeExpire,

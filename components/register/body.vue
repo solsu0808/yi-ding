@@ -21,8 +21,8 @@
       <el-form-item>
         <transition-group name="fade" mode="out-in">
           <div v-if="signupBtn" key="signupBtn">
-            <el-button type="primary" @click="signup('ruleForm')">同意一订协议并入驻</el-button>
-            <a href="" class="agreement-user">《一订商家协议》</a>
+            <el-button type="primary" @click="signup('ruleForm')">同意一订协议并注册</el-button>
+            <a href="" class="agreement-user">《一订用户协议》</a>
           </div>
           <span class="signup-err" v-if='signupErr' key="signupErr"> {{ signupErr }} </span>
           <span class="signup-ok" v-if='signupOk' key="signupOk"> {{ signupOk }} </span>

@@ -40,6 +40,50 @@ app.use(convert(betterBody({
   uploadDir: path.join(__dirname, '../static/upload/sellers/img')
 })))
 
+// 中间件阻止 XSS 攻击
+app.use(async (ctx, next) => {
+  if(ctx.method === 'POST'){
+    let req = ctx.request.fields
+    for(key in req){
+      if(req[key].includes){
+        if(req[key].includes('<script>')){
+          console.log("非法输入")
+          return false
+        }
+      }
+    }
+  }
+  await next()
+})
+
+// 中间件进行登录权限验证
+app.use(async (ctx, next) => {
+  let { userinfo, sellerinfo } = ctx.session,
+                           url = ctx.url
+
+  if(url === '/user_center' || url.indexOf('/reserve') >= 0){
+    if(!userinfo){
+      return ctx.response.redirect('/login')
+    }
+  }
+  if(url === '/seller_center'){
+    if(!sellerinfo){
+      return ctx.response.redirect('/seller_login')
+    }
+  }
+  if(url === '/register' || url === '/login'){
+    if(userinfo){
+      return ctx.response.redirect('/user_center')
+    }
+  }
+  if(url === '/seller_register' || url === '/seller_login'){
+    if(sellerinfo){
+      return ctx.response.redirect('/seller_center')
+    }
+  }
+  await next()
+})
+
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production')
@@ -52,7 +96,6 @@ async function start() {
     host = process.env.HOST || '127.0.0.1',
     port = process.env.PORT || 3000
   } = nuxt.options.server
-
   // Build in development
   if (config.dev) {
     const builder = new Builder(nuxt)

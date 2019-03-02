@@ -5,14 +5,23 @@
         <nuxt-link to="/"><img src="@/assets/img/logo.png" alt="" class="logo"></nuxt-link>
       </el-col>
       <el-col :span="14">
-        <el-input v-model="searchContext" placeholder="搜索商家" @input="searchSug" class="search-in"></el-input>
+        <el-input v-model="searchContext" placeholder="搜索商家" @input="searchSug" @keyup.enter.native="searchBtn" class="search-in"></el-input>
         <dl v-if="searchList.length" class="search-sug" @click.stop>
           <dd v-for="(item,index) of searchList" :key="index"><nuxt-link :to="'/product/search/'+item+'/1'">{{ item }}</nuxt-link></dd>
         </dl>
       </el-col>
       <el-col :span="5">
-        <nuxt-link :to="searchBtn()"><el-button class="search-btn el-button" icon="el-icon-search"></el-button></nuxt-link>
+        <el-button class="search-btn el-button" icon="el-icon-search" @click="searchBtn"></el-button>
       </el-col>
+      <transition name="fades">
+        <el-col :span="24" v-if="$store.state.searchSuggetsList.toString()">
+          <div class="search-suggest">
+            <dl>
+              <dd v-for="item in $store.state.searchSuggetsList"><nuxt-link :to="'/product/'+item.sellerid">{{item.pname}}</nuxt-link></dd>
+            </dl>
+          </div>
+        </el-col>
+      </transition>
     </el-row>
   </div>
 </template>
@@ -46,15 +55,33 @@ export default {
     searchBtn(){
       // 判断搜索框是否为空
       if(!this.searchContext){
-        return ''
+        return false
       }
-      return '/product/search/'+this.searchContext+'/1'
+      return this.$router.push('/product/search/'+this.searchContext+'/1')
     }
   },
-  mounted(){
+  computed:{
+    // 监听 this.$store.state.myCity 的变化
+    myCity(){
+      return this.$store.state.myCity
+    }
+  },
+  watch: {
+    async myCity(){
+      let result = await this.$axios.post('/product/get-suggets',{
+        city: this.$store.state.myCity
+      })
+      if(result.status === 200){
+        // 将 result.data 存放在 vuex 中
+        this.$store.dispatch('searchSuggetsListAction', result.data)
+      }
+    }
+  },
+  async mounted(){
     document.body.onclick = () => {
       this.searchList = []
     }
+
   }
 }
 </script>

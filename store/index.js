@@ -7,7 +7,8 @@ let state = {
   myCity:'定位中...',
   menus:'',
   user:'',
-  beforeLogin:'/'
+  beforeLogin:'/',
+  searchSuggetsList: []
 }
 
 let mutations = {
@@ -19,6 +20,9 @@ let mutations = {
   },
   beforeLogin(state, param){
     state.beforeLogin = param
+  },
+  searchSuggetsList(state, param){
+    state.searchSuggetsList = param
   }
 }
 
@@ -28,6 +32,9 @@ let actions = {
   },
   beforeLoginAction(context, param){
     context.commit('beforeLogin',param)
+  },
+  searchSuggetsListAction(context, param){
+    context.commit('searchSuggetsList',param)
   },
   // 在项目初始时，页面渲染前获取分类列表
   async nuxtServerInit ({ commit }, ctx) {

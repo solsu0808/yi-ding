@@ -4,33 +4,33 @@
       <span @click="toOverview"><i class="el-icon-arrow-left"></i> 概览 - </span>
       {{toOrders.message+'订单'}}
     </div>
-    <el-row>
+    <el-row  class="right-order-body">
       <el-col :span="24" v-for="(item,index) of toOrders.details" :key="index">
         <el-card class="box-card">
           <el-row>
-            <el-col :xs="4" :sm="2" :lg="1"><span class="title">单号</span></el-col>
-            <el-col :xs="10" :sm="17" :lg="18">{{item.orderid}}</el-col>
-            <el-col :xs="10" :sm="5" :lg="5"><el-button style="float: right; padding: 3px 0; color: #31BBAC" type="text" v-if="item.status === 1 || item.status === 2" @click="operatorOrder(item)">{{ item.status === 1 ? '去付款' : '去评价' }}</el-button></el-col>
+            <el-col :xs="5" :sm="2" :lg="1"><span class="title">订单号</span></el-col>
+            <el-col :xs="9" :sm="17" :lg="18">{{item.orderid}}</el-col>
+            <el-col :xs="10" :sm="5" :lg="5"><el-button style="float: right; padding: 3px 0; color: #31BBAC" type="text" v-if="item.status === 1 || item.status === 2 || item.status === 3" @click="operatorOrder(item)">{{ item.status === 1 ? '去付款' : item.status === 2 ? '取消订单':'去评价' }}</el-button></el-col>
           </el-row>
           <el-row>
-            <el-col :xs="4" :sm="2" :lg="1"><span class="title">商家</span></el-col>
-            <el-col :xs="20" :sm="22" :lg="23">{{item.product[0].pname}}</el-col>
+            <el-col :xs="5" :sm="2" :lg="1"><span class="title">商家名</span></el-col>
+            <el-col :xs="19" :sm="22" :lg="23">{{item.product[0].pname}}</el-col>
           </el-row>
           <el-row>
-            <el-col :xs="4" :sm="2" :lg="1"><span class="title">地址</span></el-col>
-            <el-col :xs="20" :sm="22" :lg="23">{{item.product[0].location}}</el-col>
+            <el-col :xs="5" :sm="2" :lg="1"><span class="title">店在哪</span></el-col>
+            <el-col :xs="19" :sm="22" :lg="23">{{item.product[0].location}}</el-col>
           </el-row>
           <el-row>
-            <el-col :xs="4" :sm="2" :lg="1"><span class="title">谁订</span></el-col>
-            <el-col :xs="20" :sm="22" :lg="23">{{item.rname}}</el-col>
+            <el-col :xs="5" :sm="2" :lg="1"><span class="title">谁预订</span></el-col>
+            <el-col :xs="19" :sm="22" :lg="23">{{item.rname}}</el-col>
           </el-row>
           <el-row>
-            <el-col :xs="4" :sm="2" :lg="1"><span class="title">几时</span></el-col>
-            <el-col :xs="20" :sm="22" :lg="23">{{getTime(item.rDate, true)}}</el-col>
+            <el-col :xs="5" :sm="2" :lg="1"><span class="title">订几时</span></el-col>
+            <el-col :xs="19" :sm="22" :lg="23">{{getTime(item.rDate, true)}}</el-col>
           </el-row>
           <el-row>
-            <el-col :xs="4" :sm="2" :lg="1"><span class="title">建单</span></el-col>
-            <el-col :xs="20" :sm="22" :lg="23">{{getTime(item.oDate)}}</el-col>
+            <el-col :xs="5" :sm="2" :lg="1"><span class="title">下单时</span></el-col>
+            <el-col :xs="19" :sm="22" :lg="23">{{getTime(item.oDate)}}</el-col>
           </el-row>
         </el-card>
       </el-col>
@@ -43,6 +43,10 @@
     <transition name="fade">
       <div class="right-order-shade" v-if="commentShade">
         <div class="right-order-comment">
+          <div class="reply-title">
+            <i class="el-icon-edit"></i>
+            <span>用户评价</span>
+          </div>
           <div class="star">
             <span>请选择：</span>
             <i :class="'el-icon-star-on'+(commentInfo.commentStars>=o?' main-color':'')" v-for="o in 5" :key="o" @click="selectStar(o)"></i>
@@ -50,7 +54,7 @@
           <el-input
             type="textarea"
             :rows="10"
-            placeholder="批评若不自由，则赞美无意义"
+            placeholder="批评若不自由，赞美则无意义"
             v-model="commentInfo.comment">
           </el-input>
           <div class="comment-btn">
@@ -99,17 +103,40 @@ export default {
         })
         return window.location.href = pay.data
       }
-      // 去评价
+      // 取消订单
       if(order.status === 2){
+        let orderId = order.orderid
+        // 判断是否过了预订日期
+        if(new Date() - new Date(order.rDate) >= 0){
+          return alert('订单已到期，无法取消')
+        }
+        // 显示遮罩层
+        this.loadShade = true
+        // 发送取消订单请求
+        let result = await this.$axios.post('/order/close', {
+          orderId: orderId
+        })
+        // 关闭遮罩层
+        this.loadShade = false
+        if(result.status === 200 && result.data === 'success'){
+          this.closeOrder(orderId)
+        }
+      }
+      // 去评价
+      if(order.status === 3){
         this.commentShade = true
         this.commentInfo.orderId = order.orderid
         this.commentInfo.userId = order.userid
         this.commentInfo.sellerId = order.sellerid
+        this.commentBtnStatus = false
       }
     },
     toOverview(){
-      // 子调用父组件方法
+      // 子 to-order 调用父组件方法
       this.$emit('to-order', '')
+    },
+    closeOrder(orderId){
+      this.$emit('closeOrder',orderId)
     },
     // 将 ISO 标准时间转换为本地时间
     getTime(time, onlyDate){
