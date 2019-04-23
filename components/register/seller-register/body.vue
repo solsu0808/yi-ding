@@ -69,12 +69,13 @@
           </el-form-item>
         </el-col>
         <el-col :span="24">
-          <el-form-item label="商家图片">
+          <el-form-item label="商家图片" prop="img">
             <el-upload
               action="/sellers/upload"
               list-type="picture-card"
               :on-remove="handleRemove"
-              :on-success="uploadSuccess">
+              :on-success="uploadSuccess"
+              v-model="ruleForm.img">
               <i class="el-icon-plus"></i>
             </el-upload>
             <el-dialog :visible.sync="dialogVisible">
@@ -204,6 +205,10 @@ export default {
         phone: [{
           required: true,
           message: '联系电话必填'
+        }],
+        img: [{
+          required: true,
+          message: '至少需要上传一张图片',
         }]
       },
       signupErr: false,

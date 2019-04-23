@@ -40,5 +40,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@import "@/assets/css/user-seller-center/header-nav.css"
+@import "@/assets/css/user-seller-center/header-nav.css";
 </style>

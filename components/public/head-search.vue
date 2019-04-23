@@ -53,6 +53,12 @@ export default {
       }
     }, 500),
     searchBtn(){
+      // 判断搜索框是否包含 "/"
+      if(this.searchContext.indexOf("/") !== -1 || this.searchContext.indexOf("?") !== -1){
+        //  将 "/" 替换为""
+        this.searchContext = this.searchContext.replace(/\//g, "")
+        this.searchContext = this.searchContext.replace(/\?/g, "")
+      }
       // 判断搜索框是否为空
       if(!this.searchContext){
         return false

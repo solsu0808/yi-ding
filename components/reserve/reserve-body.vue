@@ -157,5 +157,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "@/assets/css/reserve/reserve-body.css"
+@import "@/assets/css/reserve/reserve-body.css";
 </style>

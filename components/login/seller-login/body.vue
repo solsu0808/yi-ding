@@ -68,5 +68,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "@/assets/css/login/body.css"
+@import "@/assets/css/login/body.css";
 </style>

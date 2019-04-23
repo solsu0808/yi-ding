@@ -50,10 +50,10 @@ export default {
             email: self.ruleForm.email,
             pass: self.ruleForm.pass
           })
-          if(result.data === '邮箱未注册' || result.data === '密码不正确' ){
-            return self.loginErr = result.data
+          if(result.data.message === '邮箱未注册' || result.data.message === '密码不正确' ){
+            return self.loginErr = result.data.message
           }
-          if(result.data === '登录成功'){
+          if(result.data.code === 0){
             self.loginErr = false
             return self.$router.replace(self.$store.state.beforeLogin)
           }
@@ -68,5 +68,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "@/assets/css/login/body.css"
+@import "@/assets/css/login/body.css";
 </style>

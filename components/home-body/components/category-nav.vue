@@ -18,5 +18,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@import "@/assets/css/home-body/category-nav.css"
+@import "@/assets/css/home-body/category-nav.css";
 </style>

@@ -21,7 +21,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: "#FFF" },
 
   /*
   ** Global CSS
@@ -50,7 +50,8 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: `http://${process.env.HOST||'127.0.0.1'}:${process.env.PORT||3000}`
+    baseURL: `http://${process.env.HOST||'127.0.0.1'}:${process.env.PORT||3000}`,
+    timeout: 3000
   },
 
   router: {

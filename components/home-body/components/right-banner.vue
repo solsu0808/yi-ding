@@ -41,5 +41,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@import "@/assets/css/home-body/right-banner.css"
+@import "@/assets/css/home-body/right-banner.css";
 </style>

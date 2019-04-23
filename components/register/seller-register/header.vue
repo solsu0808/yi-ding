@@ -18,5 +18,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "@/assets/css/register/header.css"
+@import "@/assets/css/register/header.css";
 </style>

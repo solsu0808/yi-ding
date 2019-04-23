@@ -17,5 +17,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "@/assets/css/login/header.css"
+@import "@/assets/css/login/header.css";
 </style>

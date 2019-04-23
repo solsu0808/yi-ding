@@ -18,14 +18,14 @@
         </nuxt-link>
       </el-col>
       <el-col :span="8" v-for="(o, index) in pets.slice(1)" :key="index" class="suggest-pets-body-list">
-        <a href="#">
+          <nuxt-link to="/developing">
           <el-card :body-style="{ padding: '0px' }">
             <div class="pets-list">
               <div class="pets-list-title">{{ o.title }}</div>
               <img :src="o.src" class="image">
             </div>
           </el-card>
-        </a>
+        </nuxt-link>
       </el-col>
     </el-row>
   </div>

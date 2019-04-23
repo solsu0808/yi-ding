@@ -151,5 +151,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "@/assets/css/register/body.css"
+@import "@/assets/css/register/body.css";
 </style>

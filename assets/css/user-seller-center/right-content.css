@@ -1,7 +1,7 @@
 .center-right-content{
   padding: 60px 0 20px 60px;
   background: #FCFCFC;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .center-right-content .right-content-card{

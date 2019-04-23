@@ -33,6 +33,7 @@
     <div class="nothing-404">
       <span class="iconfont icon-AK-LYhangbanyuding"></span>
       <p class="no-info-404">商品君搭乘 404 航班去追寻诗和远方了</p>
+      <p class="no-info-404"> <nuxt-link to="/seller_register">您可以点击入驻为商家</nuxt-link></p>
     </div>
   </div>
 </template>

@@ -91,5 +91,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@import "@/assets/css/user-seller-center/right-content.css"
+@import "@/assets/css/user-seller-center/right-content.css";
 </style>

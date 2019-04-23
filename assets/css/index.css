@@ -1,6 +1,11 @@
 html, body{
   margin: 0;
   padding: 0;
+  height: 101vh;
+
+  /* transform透视 */
+  /* perspective: 8000px; */
+  /* transform-style: preserve-3d; */
 }
 
 dl, dd{
@@ -24,9 +29,11 @@ a:hover{
 .page-enter-active, .page-leave-active {
   transition:all 0.4s linear;
 }
-.page-leave-active, .page-enter{
+.page-leave-active{
   transform: rotateY(90deg);
-  opacity: 0.3;
+}
+.page-enter{
+  transform: rotateY(-90deg);
 }
 
 /* 没有结果时 404 航班 */

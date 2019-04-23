@@ -17,6 +17,13 @@ router.post('/get-good-profile', async (ctx, next) => {
 
   // 判断是关键词搜索pname 还是 类型查找type 还是 详情页面sellerid
   if (req.pname) {
+    let chars = ["&","*","+","-",".","[","?","\\","^","{","|","(",")"]
+    chars.forEach( (item) => {
+      if(req.pname.indexOf(item) !== -1){
+        var reg = new RegExp("\\"+item,"g")
+        req.pname = req.pname.replace(reg, "\\"+reg)
+      }
+    })
     let pname = new RegExp(req.pname)
 
     // 获取搜索结果总数
@@ -117,6 +124,13 @@ router.post('/get-good-profile', async (ctx, next) => {
 // 获取首页搜索框搜索
 router.post('/get-search-sug', async (ctx, next) => {
   let req = ctx.request.fields
+  let chars = ["&","*","+","-",".","[","?","\\","^","{","|","(",")"]
+  chars.forEach( (item) => {
+    if(req.searchInput.indexOf(item) !== -1){
+      var reg = new RegExp("\\"+item,"g")
+      req.searchInput = req.searchInput.replace(reg, "\\"+reg)
+    }
+  })
   let pname = new RegExp(req.searchInput)
   let result = await product.aggregate([{
       $match: {

@@ -160,5 +160,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "@/assets/css/user-seller-center/right-order.css"
+@import "@/assets/css/user-seller-center/right-order.css";
 </style>
