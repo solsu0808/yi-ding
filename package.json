@@ -22,7 +22,7 @@
     "koa-convert": "^1.2.0",
     "koa-router": "^7.4.0",
     "koa-session": "^5.10.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "mongoose": "^5.4.9",
     "nodemailer": "^5.1.1",
