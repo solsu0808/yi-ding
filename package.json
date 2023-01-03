@@ -27,7 +27,7 @@
     "mongoose": "^5.4.9",
     "nodemailer": "^5.1.1",
     "nodemailer-smtp-transport": "^2.7.4",
-    "nuxt": "^2.3.4",
+    "nuxt": "^2.15.8",
     "redis": "^2.8.0",
     "vue": "^2.6.7"
   },
